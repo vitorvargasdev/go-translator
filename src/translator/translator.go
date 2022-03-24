@@ -6,13 +6,13 @@ import (
 	"github.com/chromedp/chromedp"
 )
 
-func Translate(text string, langTo string, langFrom string) (string, error) {
+func Translate(text string, langFrom string, langTo string) (string, error) {
 	ctx, cancel := chromedp.NewContext(context.Background())
 	defer cancel()
 
 	var res string
 
-	err := navigateToTranslator(ctx, langTo, langFrom)
+	err := navigateToTranslator(ctx, langFrom, langTo)
 	if err != nil {
 		return "", err
 	}
@@ -35,8 +35,8 @@ func Translate(text string, langTo string, langFrom string) (string, error) {
 	return res, nil
 }
 
-func navigateToTranslator(ctx context.Context, langTo string, langFrom string) error {
-	return chromedp.Run(ctx, chromedp.Navigate("https://translate.google.com.br/?"+"sl="+langTo+"&tl="+langFrom))
+func navigateToTranslator(ctx context.Context, langFrom string, langTo string) error {
+	return chromedp.Run(ctx, chromedp.Navigate("https://translate.google.com.br/?"+"sl="+langFrom+"&tl="+langTo))
 }
 
 func waitVisibleTextarea(ctx context.Context) error {

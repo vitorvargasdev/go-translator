@@ -1,15 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"gotranslator/src/translator"
+	"gotranslator/src/cli"
+	"log"
+	"os"
 )
 
 func main() {
-	text, err := translator.Translate("Hello World", "en", "pt")
-	if err != nil {
-		panic(err)
-	}
+	cli := cli.Prepare()
 
-	fmt.Println(text)
+	if err := cli.Run(os.Args); err != nil {
+		log.Fatal(err)
+	}
 }
