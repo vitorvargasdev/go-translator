@@ -1,11 +1,20 @@
+# About
+A simple Go project made to get translations from Google Translate.
+
+This project was developed mainly using google technology called chromedp which is used to browse google chrome using programming.
+
 # Requirements
 - Golang
 - Google Chrome
 
 # Installation Guide
 
-1. go install
+To download, compile, and install the latest release, do this:
+```sh
+git clone https://github.com/instalando/go-translator.git
+cd go-translator
+go install
+go build
+```
 
 # Usage
-Modify main.go file the variable text and run in terminal:
-    go run main.go
