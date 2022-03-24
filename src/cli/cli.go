@@ -9,7 +9,7 @@ import (
 
 func Prepare() *cli.App {
 	app := cli.NewApp()
-	app.Name = "Go Translator"
+	app.Name = "Go Translator ~ Developed by @instalando"
 	app.Usage = "Translate any text to any language"
 
 	Flags := []cli.Flag{
